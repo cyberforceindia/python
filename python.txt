@@ -1,0 +1,201 @@
+''' 1.
+num=int(input("Enter the value"))
+if num%2 == 0:
+    print("even number")
+else:
+    print("not event number")
+
+for i in range(1,5):
+    print(i)
+
+i=0
+while i<5:
+    print(i)
+    i=i+1;
+ '''
+
+
+''' 2.
+l1=[1,2,3,4,]
+print(l1)
+print(l1[1:3])
+l1.append(5)
+print(l1)
+
+t1=(1,23,45,6)
+print(t1)
+print(t1[2:5])
+
+dict1={1:"deev",2:"mahi"}
+print(dict1)
+print(dict1[1]) '''
+
+
+'''3.
+#function
+def MyName(n):
+    print(n)
+MyName("Dev")
+
+#scope
+x=20
+def show():
+    x=40
+    print(x)
+show()
+print(x)
+
+
+#list mutability
+l1=[2,3,4,5]
+print(l1)
+l1.append(45)
+print(l1)
+
+#recursion
+def fact(n):
+    if (n==0 or n==1):
+        return 1
+    else:
+        return n* fact(n-1)
+
+print(fact(4)) '''
+
+''' 4.
+class MyClass:
+    def __init__(self,n):
+        self.n=n
+    def show(self):
+        print(self.n)
+obj=MyClass(30)
+obj.show() '''
+
+'''5.
+arr=[1,2,3]
+key=2
+for i in arr:
+    if arr[i] == key:
+        print("found")
+        break
+#sorting
+arr.sort()
+print(arr)
+
+#hashing
+data={}
+data["a"]=1
+data["b"]=2
+print(data)'''
+
+'''6.
+import re
+
+text = "My number is 9876543210"
+
+# find digits
+result = re.findall(r'\d+', text)
+print(result)'''
+
+'''7.
+try:
+    a=int(input("enter the value for a"))
+    b=int(input("enter the value for b"))
+    res=a/b
+except ZeroDivisionError:
+    print("error is occur")
+except ValueError:
+    print("incorrect type")
+else:
+    print(res)
+finally:
+    print("exception")
+#raise
+age=int(input("enter the value for age"))
+if age<0:
+        raise ValueError("age is not correct")
+
+#assert
+x=-5
+assert x>0 ,"x should be positive"
+print("no error is occyr")'''
+
+
+class MyError(Exception):
+    pass
+✅ 8. Exception Types
+# Class-based exception
+class MyError(Exception):
+    pass
+
+try:
+    raise MyError("Custom Error")
+except MyError as e:
+    print(e)
+
+# Nested exception
+try:
+    try:
+        x = int("abc")
+    except ValueError:
+        print("Inner Exception")
+except:
+    print("Outer Exception")
+✅ 9. Lambda Function
+square = lambda x: x*x
+print(square(5))
+✅ 10. filter() and reduce()
+from functools import reduce
+
+# filter
+nums = [1, 2, 3, 4, 5]
+even = list(filter(lambda x: x%2==0, nums))
+print("Even:", even)
+
+# reduce
+sum_all = reduce(lambda a, b: a+b, nums)
+print("Sum:", sum_all)
+✅ 11. Module Creation & Usage
+
+👉 Create file: mymodule.py
+
+def greet(name):
+    return "Hello " + name
+
+👉 Main file:
+
+import mymodule
+print(mymodule.greet("Uday"))
+✅ 12. Image Insertion
+from PIL import Image
+
+img = Image.open("image.jpg")
+img.show()
+✅ 13. DataFrame & CSV
+import pandas as pd
+
+# create dataframe
+data = {"Name": ["Uday", "Ram"], "Age": [21, 22]}
+df = pd.DataFrame(data)
+
+# save csv
+df.to_csv("data.csv", index=False)
+
+# read csv
+df2 = pd.read_csv("data.csv")
+print(df2)
+✅ 14. GUI using Tkinter
+import tkinter as tk
+
+def click():
+    label.config(text="Button Clicked")
+
+root = tk.Tk()
+root.title("My App")
+
+label = tk.Label(root, text="Hello")
+label.pack()
+
+button = tk.Button(root, text="Click Me", command=click)
+button.pack()
+
+root.mainloop()
